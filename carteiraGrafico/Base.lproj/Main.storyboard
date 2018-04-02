@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="carteiraGrafico" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renda Fixa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sP-Ou-VRg">
+                                <rect key="frame" x="16" y="45" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carteira" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1s-rh-Qn7">
+                                <rect key="frame" x="129" y="192" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renda Variável" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piv-gQ-MgI">
+                                <rect key="frame" x="191" y="45" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" autorepeat="NO" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sMH-zO-BBi">
+                                <rect key="frame" x="16" y="81" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeRF:" destination="BYZ-38-t0r" eventType="valueChanged" id="DWT-Zt-61m"/>
+                                </connections>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" autorepeat="NO" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Qx-wFu">
+                                <rect key="frame" x="210" y="81" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeRV:" destination="BYZ-38-t0r" eventType="valueChanged" id="hJ7-54-eUa"/>
+                                </connections>
+                            </stepper>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRd-Wq-g7N" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="231" width="288" height="307"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kRd-Wq-g7N" firstAttribute="top" secondItem="t1s-rh-Qn7" secondAttribute="bottom" constant="18" id="0Vz-aj-NbA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Piv-gQ-MgI" secondAttribute="trailing" constant="16" id="2MX-6e-FwB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kRd-Wq-g7N" secondAttribute="bottom" constant="30" id="Cue-sN-rb7"/>
+                            <constraint firstItem="Piv-gQ-MgI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="DP4-NK-gfd"/>
+                            <constraint firstItem="sMH-zO-BBi" firstAttribute="top" secondItem="3sP-Ou-VRg" secondAttribute="bottom" constant="15" id="LT8-GO-OJr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dqr-Qx-wFu" secondAttribute="trailing" constant="16" id="UKg-qp-3Xl"/>
+                            <constraint firstItem="3sP-Ou-VRg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="UhY-TP-7h2"/>
+                            <constraint firstItem="kRd-Wq-g7N" firstAttribute="trailing" secondItem="Dqr-Qx-wFu" secondAttribute="trailing" id="YKD-sF-Dce"/>
+                            <constraint firstItem="3sP-Ou-VRg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Zac-L3-P9l"/>
+                            <constraint firstItem="sMH-zO-BBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="doc-xq-Dbf"/>
+                            <constraint firstItem="kRd-Wq-g7N" firstAttribute="leading" secondItem="sMH-zO-BBi" secondAttribute="leading" id="f3n-lV-LlK"/>
+                            <constraint firstItem="kRd-Wq-g7N" firstAttribute="centerX" secondItem="t1s-rh-Qn7" secondAttribute="centerX" id="oni-0S-mDc"/>
+                            <constraint firstItem="Dqr-Qx-wFu" firstAttribute="top" secondItem="Piv-gQ-MgI" secondAttribute="bottom" constant="15" id="tm1-pI-AaY"/>
+                            <constraint firstItem="t1s-rh-Qn7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="172" id="vWs-Bf-0zq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pieCarteira" destination="kRd-Wq-g7N" id="UxK-nL-5B2"/>
+                        <outlet property="rfStepper" destination="sMH-zO-BBi" id="PZZ-eQ-Org"/>
+                        <outlet property="rvStepper" destination="Dqr-Qx-wFu" id="CpT-qO-xYq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-99.375" y="117.25352112676056"/>
         </scene>
     </scenes>
 </document>

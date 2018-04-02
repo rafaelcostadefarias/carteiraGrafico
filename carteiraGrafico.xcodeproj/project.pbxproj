@@ -12,6 +12,7 @@
 		0B171B282072B44600E73DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B171B262072B44600E73DBA /* Main.storyboard */; };
 		0B171B2A2072B44600E73DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B171B292072B44600E73DBA /* Assets.xcassets */; };
 		0B171B2D2072B44600E73DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B171B2B2072B44600E73DBA /* LaunchScreen.storyboard */; };
+		B1D44684BB1C5E08D0C74E72 /* Pods_carteiraGrafico.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A838DADC6E92FE2BE8F7AFB5 /* Pods_carteiraGrafico.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0B171B292072B44600E73DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B171B2C2072B44600E73DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B171B2E2072B44600E73DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D90BBB3081F751B65DD75A4 /* Pods-carteiraGrafico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carteiraGrafico.release.xcconfig"; path = "Pods/Target Support Files/Pods-carteiraGrafico/Pods-carteiraGrafico.release.xcconfig"; sourceTree = "<group>"; };
+		A838DADC6E92FE2BE8F7AFB5 /* Pods_carteiraGrafico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carteiraGrafico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EB3523945E0F339B28ADE9 /* Pods-carteiraGrafico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carteiraGrafico.debug.xcconfig"; path = "Pods/Target Support Files/Pods-carteiraGrafico/Pods-carteiraGrafico.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D44684BB1C5E08D0C74E72 /* Pods_carteiraGrafico.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0B171B212072B44600E73DBA /* carteiraGrafico */,
 				0B171B202072B44600E73DBA /* Products */,
+				D625C1D54F77DFFB19663C08 /* Pods */,
+				ED1E657C2BFE6799528F79C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = carteiraGrafico;
 			sourceTree = "<group>";
 		};
+		D625C1D54F77DFFB19663C08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9EB3523945E0F339B28ADE9 /* Pods-carteiraGrafico.debug.xcconfig */,
+				6D90BBB3081F751B65DD75A4 /* Pods-carteiraGrafico.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED1E657C2BFE6799528F79C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A838DADC6E92FE2BE8F7AFB5 /* Pods_carteiraGrafico.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B171B312072B44600E73DBA /* Build configuration list for PBXNativeTarget "carteiraGrafico" */;
 			buildPhases = (
+				1511373DD28473BC2944717F /* [CP] Check Pods Manifest.lock */,
 				0B171B1B2072B44600E73DBA /* Sources */,
 				0B171B1C2072B44600E73DBA /* Frameworks */,
 				0B171B1D2072B44600E73DBA /* Resources */,
+				5062D7347B2BAB7A57ADCE8A /* [CP] Embed Pods Frameworks */,
+				E5394154017D7E8C3857BF3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1511373DD28473BC2944717F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-carteiraGrafico-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5062D7347B2BAB7A57ADCE8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-carteiraGrafico/Pods-carteiraGrafico-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-carteiraGrafico/Pods-carteiraGrafico-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5394154017D7E8C3857BF3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-carteiraGrafico/Pods-carteiraGrafico-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B171B1B2072B44600E73DBA /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		0B171B322072B44600E73DBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9EB3523945E0F339B28ADE9 /* Pods-carteiraGrafico.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +368,7 @@
 		};
 		0B171B332072B44600E73DBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D90BBB3081F751B65DD75A4 /* Pods-carteiraGrafico.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
